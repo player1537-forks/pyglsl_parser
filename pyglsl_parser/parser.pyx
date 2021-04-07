@@ -66,7 +66,8 @@ cdef convert_function_parameter(astFunctionParameter* c_param):
     c_var = <astVariable*>(c_param)
     # TODO(nicholasbishop): other fields
     return AstFunctionParameter(name=c_var.name.decode(),
-                                base_type=convert_type(c_var.baseType))
+                                base_type=convert_type(c_var.baseType),
+                                storage=c_param.storage)
 
 
 cdef convert_function(astFunction* c_func):

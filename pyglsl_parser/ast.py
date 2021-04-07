@@ -47,9 +47,9 @@ class AstVariable(EqualityMixin):
 
 
 class AstFunctionParameter(AstVariable):
-    def __init__(self, name, base_type):
+    def __init__(self, name, base_type, storage):
         super().__init__(name, base_type)
-        self.storage = None
+        self.storage = storage
         self.auxiliary = None
         self.memory = None
         self.precision = None
